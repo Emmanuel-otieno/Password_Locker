@@ -1,5 +1,5 @@
 
-class Credetials:
+class Credentials:
     def __init__(self):
         self.account =[]
 
