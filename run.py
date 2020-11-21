@@ -19,3 +19,13 @@ def main():
             print("confirm password")
             confirm_password = input()
 
+
+        if  confirm_password != created_user_password:
+            print("Invalid password")
+            print("Input password")
+            created_user_password = input()
+            print ("confirm your password")
+            confirm_password = input()
+
+
+        
