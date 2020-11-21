@@ -19,6 +19,12 @@ class User(Credentials):
     def create_new_user(self,username,password):
         self.username = username
         self.password = password
-        print("Accout created successfully")
-        self.isLoggedIn = true       
+        print("Account created successfully")
+        self.isLoggedIn = true
+
+
+    def view_accounts(self):
+        for ac in self.accounts:
+            print(ac)
+        return self.accounts               
 
