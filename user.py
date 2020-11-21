@@ -38,8 +38,30 @@ class User(Credentials):
             print('Login failed')  
             return "incorrect username"
 
-            
-              
+
+    def log_out(self):
+        self.isLoggedIn = False
+        return 'Logout successfully'
+
+
+
+c = user()
+c.create_new_user('test_user','password')
+print(c.create_password(30))
+print(c.new_account('LI','linkedin','p@$$w0rd'))
+print(c.new_account('fb','facebook', '@n0ther|p@$$w0rd'))
+print("=====================================================")
+print(c.get_account_details('LI'))
+print(c.delete_account('erty'))
+print(c.accounts)
+print('==============View Account============')
+print(c.view_accounts())
+
+print('====================Log Out======================')
+print(c.log_out())
+print('====================View Accounts======================')
+
+print(c.view_accounts())
 
 
 
