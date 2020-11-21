@@ -20,11 +20,26 @@ class User(Credentials):
         self.username = username
         self.password = password
         print("Account created successfully")
-        self.isLoggedIn = true
+        self.isLoggedIn = True
 
 
     def view_accounts(self):
         for ac in self.accounts:
             print(ac)
-        return self.accounts               
+        return self.accounts  
+
+
+    def sign_in(self,username,password):
+        if username == self.username and password == self.password:
+            self.isLoggedIn = True
+            print('success')
+            return "Login successfully"
+        else:
+            print('Login failed')  
+            return "incorrect username"
+
+            
+              
+
+
 
