@@ -9,4 +9,13 @@ def main():
         short_code = input().lower()
         print("\n")
 
-        
+        if short_code == 'nw':
+            print("create username")
+            create_user_name = input(any)
+
+            print("create password")
+            create_user_name = input(any)
+
+            print("confirm password")
+            confirm_password = input()
+
