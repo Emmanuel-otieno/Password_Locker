@@ -15,6 +15,10 @@ class User(Credentials):
                 self.sign_in(username,password)
             self.create_new_user(username,password)  
 
-            
-              
+
+    def create_new_user(self,username,password):
+        self.username = username
+        self.password = password
+        print("Accout created successfully")
+        self.isLoggedIn = true       
 
