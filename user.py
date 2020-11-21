@@ -16,4 +16,9 @@ class Credetials:
     def  create_password(self,length=6):
         alphabet = ascli_letters + digits + punctuation
         return "".join( choice(alphabet) for i in range(length))
-        
+
+
+    def get_account_details (self,account_name):
+        for ac in self.account:
+            if ac['account_name']==account_name:
+                return ac   
