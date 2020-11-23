@@ -13,3 +13,18 @@ class TestAccount(unittest.TestCase):
         self.assertEqual(self.new_account.account_name,"Facebook")
         self.assertEqual(self.new_account.password,"072593")
         self.assertEqual(self.new_account.email,"sakoemmanuel4@gmail.com")
+
+
+
+    def test_save_account(self):
+        """
+        """
+        self.new_account.save_account()
+        self.assertEqual(len(User.account_list),1)
+
+    
+    def tearDown(self):
+        """
+        tearDown method that does clean up after each test case has run.
+        """  
+        User.account_list = []  
