@@ -7,13 +7,12 @@ class TestAccount(unittest.TestCase):
 
     def test_init(self):
         """
-        test_init is to test if the objects are initialized properly
+        test if the objects are initialized properly
         """ 
         self.assertEqual(self.new_account.user_name,"Emmanuel")
         self.assertEqual(self.new_account.account_name,"Facebook")
         self.assertEqual(self.new_account.password,"072593")
         self.assertEqual(self.new_account.email,"sakoemmanuel4@gmail.com")
-
 
 
     def test_save_account(self):
