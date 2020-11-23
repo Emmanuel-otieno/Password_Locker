@@ -1,29 +1,47 @@
-
 class Credentials:
-    def __init__(self):
-        self.accounts =[]
+    """
+    Class that generates new instances of users.
+    """
+    credentials_list = []
 
-    def new_account(self, accont_name,username,password=None):
-        if password is None:
-            user_input = int(input('specify the length of password needed: ')) 
-            password = self.create_password(user_input) 
-            account = ('account_name':account_name'username':username,'password':password)
-            self.account.append(account)
-            print("your account is created sucessfully")
-            return account
+    def __init__(self,credentials_name,name,password,email):
+        self.credentials_name = credentials_name
+        self.name = name
+        self.password = password
+        self.email = email
 
+    
+    def save_credentials(self):
+        """
+        Method to save credential objects into credentials list
+        """  
+        Credentials.credentials_list.append(self)
 
-    def  create_password(self,length=6):
-        alphabet = ascli_letters + digits + punctuation
-        return "".join( choice(alphabet) for i in range(length))
+    def delete_credentials(self):
+        """
+        A method that deletes credentials from the list
+        """
+        Credentials.credentials_list.remove(self)
 
+    @classmethod
+    def find_by_name(cls,name):
+         for credentials in cls.credentials_list:
+            if credentials.credentials_name == name:
+             return credentials
 
-    def get_account_details (self,account_name):
-        for ac in self.account:
-            if ac['account_name']==account_name:
-                return ac   
+    @classmethod
+    def credentials_exist(cls,name):
+        """
+        """
+        for credentials in cls.credentials_list:
+            if credentials.password == name:
+                    return credentials
 
+        return False
 
-    def delete_account(self,accont_name):
-        self.account = [ac for ac in self.account if not (ac.get('account_name')=account_name)]
-        print ("Account is dunked")            
+    @classmethod
+    def display_credentials(cls): 
+        '''
+        method that returns the credentials list
+        '''
+        return cls.credentials_list       
